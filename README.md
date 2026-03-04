@@ -1,4 +1,4 @@
-# 04-aws-automation-blueprint
+# 04-aws-reliability-migrations
 
 A production-minded Database Reliability Engineering toolkit: HA lab, backup/PITR drills, and zero-downtime migration playbooks.
 
