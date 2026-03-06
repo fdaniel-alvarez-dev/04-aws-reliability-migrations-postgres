@@ -1,4 +1,4 @@
-.PHONY: demo up down logs backup restore check
+.PHONY: demo up down logs backup restore check migrate migrate-status migrate-rollback test test-demo test-production
 
 demo: up check backup
 	@echo "Demo complete. Try: make logs"
@@ -20,3 +20,20 @@ backup:
 
 restore:
 	bash scripts/restore.sh
+
+migrate:
+	bash scripts/migrate.sh
+
+migrate-status:
+	bash scripts/migrate_status.sh
+
+migrate-rollback:
+	bash scripts/migrate_rollback.sh
+
+test: test-demo
+
+test-demo:
+	@TEST_MODE=demo python3 tests/run_tests.py
+
+test-production:
+	@TEST_MODE=production python3 tests/run_tests.py
